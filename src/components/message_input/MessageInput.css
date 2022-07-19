@@ -1,0 +1,25 @@
+footer {
+    background-color: blue;
+}
+
+.input {
+    outline: none;
+    margin: 0px 8px;
+    border: none;
+    border-radius: 8px;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.clearFix {
+    clear: both;
+}
+
+
+.footer-form button {
+    border: none;
+}
+
+.footer-form button:hover {
+    background-color: #ccc;
+}

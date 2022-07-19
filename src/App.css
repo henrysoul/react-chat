@@ -1,0 +1,40 @@
+.all-chats {
+    margin-top: 10px;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: blue;
+    position: relative;
+}
+
+.chat {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .white-box {
+        left: -30px;
+        top: 6px;
+    }
+
+    .white-box_2 {
+        right: -30px;
+        top: 6px;
+
+    }
+}
+
+@media (max-width: 315px) {
+    .white-box {
+        left: -32px;
+        top: 6px;
+    }
+    .white-box_2 {
+        right: -32px;
+        top: 6px;
+
+    }
+}

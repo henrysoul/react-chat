@@ -1,0 +1,18 @@
+.blue-chat {
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    width: 80%;
+    perspective: 1000px;
+}
+
+.white-box {
+    height: 100%;
+    width: 80px;
+    background-color: white;
+    position: absolute;
+    left: -24px;
+    top: 2px;
+    transform: rotateY(80deg) rotateX(0deg);
+
+}

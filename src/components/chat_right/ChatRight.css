@@ -1,0 +1,19 @@
+.white-chat{
+    background-color: #ccc;
+    border-radius: 10px;
+    color: black;
+    width: 80%;
+    perspective: 1000px;
+    float: right;
+}
+
+.white-box_2{
+    height: 100%;
+    width: 80px;
+    background-color: white;
+    position: absolute;
+    right: -24px;
+    top: 2px;
+    transform:  rotateY(-80deg) rotateX(0deg);
+
+}
