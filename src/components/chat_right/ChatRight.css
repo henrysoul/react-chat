@@ -1,17 +1,21 @@
-.all-chats {
-    margin-top: 10px;
+.white-chat{
+    background-color: #ccc;
+    border-radius: 10px;
+    color: black;
+    width: 80%;
+    perspective: 1000px;
+    float: right;
 }
 
-.avatar {
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    background-color: blue;
-    position: relative;
-}
+.white-box_2{
+    height: 100%;
+    width: 80px;
+    background-color: white;
+    position: absolute;
+    right: -24px;
+    top: 2px;
+    transform:  rotateY(-80deg) rotateX(0deg);
 
-.chat {
-    position: relative;
 }
 
 @media (max-width: 768px) {
