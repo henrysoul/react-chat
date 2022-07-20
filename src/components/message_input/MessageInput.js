@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./MessageInput.css";
 
 export default function MessageInput() {
-  const { name } = useSelector((state) => state.chat);
-  const dispatch = useDispatch();
+  const { name } = useSelector((state) => state);
   const [msg, setMsg] = useState();
   const [msgError, setMsgError] = useState();
+  const dispatch = useDispatch();
   const msgChangeHandler = (e) => {
     setMsgError(false);
     setMsg(e.target.value);
@@ -29,35 +29,35 @@ export default function MessageInput() {
         );
       }
       setMsg("");
+      dispatch({ type: "ADDED_MESSAGE" });
     } else {
       setMsgError(true);
     }
   };
 
   return (
-    // <label>Message</label>
-    //           <input
-    //             name="message"
-    //             onChange={msgChangeHandler}
-    //             value={msg || ""}
-    //           />
-    //           <button onClick={sendMessageHandler}>Send</button>
     <footer className="fixed-bottom p-2">
-      <div className="container align-center m-auto">
-        <input
-          type="text"
-          placeholder="type here"
-          className="input"
-          onChange={msgChangeHandler}
-          value={msg || ""}
-        />
-        <button
-          className="btn btn-light"
-          type="submit"
-          onClick={sendMessageHandler}
-        >
-          send
-        </button>
+      <div className="row container align-center m-auto">
+        <div className="col-10">
+          {" "}
+          <input
+            type="text"
+            placeholder="type here"
+            className="input"
+            onChange={msgChangeHandler}
+            value={msg || ""}
+          />
+        </div>
+        <div className="col-2">
+          {" "}
+          <button
+            className="btn btn-light"
+            type="submit"
+            onClick={sendMessageHandler}
+          >
+            send
+          </button>
+        </div>
       </div>
     </footer>
   );
