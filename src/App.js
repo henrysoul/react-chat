@@ -4,10 +4,8 @@ import ChatLeft from "./components/chat_left/ChatLeft";
 import ChatRight from "./components/chat_right/ChatRight";
 import MessageInput from "./components/message_input/MessageInput";
 function App() {
-  const [msg, setMsg] = useState();
   const [name, setName] = useState();
   const [error, setError] = useState();
-  const [msgError, setMsgError] = useState();
   const [hasName, setHasName] = useState(false);
   const [mesgs, setMessages] = useState([]);
 
@@ -20,11 +18,6 @@ function App() {
     setError(false);
     const val = e.target.value;
     val && setName(e.target.value);
-  };
-
-  const msgChangeHandler = (e) => {
-    setMsgError(false);
-    setMsg(e.target.value);
   };
 
   const nameSubmitHandler = () => {
@@ -46,28 +39,6 @@ function App() {
         localStorage.setItem("names", JSON.stringify([name]));
         setHasName(true);
       }
-    }
-  };
-
-  const sendMessageHandler = () => {
-    // chack if message is entered
-    if (msg) {
-      // update message if messages exists in localStorage else add new messages with input message
-      const messages = JSON.parse(localStorage.getItem("messages"));
-      if (messages) {
-        localStorage.setItem(
-          "messages",
-          JSON.stringify([...messages, { name: name, message: msg }])
-        );
-      } else {
-        localStorage.setItem(
-          "messages",
-          JSON.stringify([{ name: name, message: msg }])
-        );
-      }
-      setMsg("");
-    } else {
-      setMsgError(true);
     }
   };
 
@@ -95,13 +66,6 @@ function App() {
         <>
           <div className="main-chat m-auto pb-5 mb-5">
             <div className="all-chats">
-              <label>Message</label>
-              <input
-                name="message"
-                onChange={msgChangeHandler}
-                value={msg || ""}
-              />
-              <button onClick={sendMessageHandler}>Send</button>
               {mesgs.map((el) => {
                 let res;
                 el.name === name
